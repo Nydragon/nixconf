@@ -14,5 +14,6 @@
     ./home-manager.nix
     ./system/mime.nix
     ./env.nix
+    ./secrets.nix
   ];
 }

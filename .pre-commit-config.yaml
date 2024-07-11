@@ -32,5 +32,5 @@ repos:
         entry: typos
         language: system
         files: .*
-        exclude: .*\.(png|jpg|jpeg)
+        exclude: .*\.(age|png|jpg|jpeg)
         stages: [commit]

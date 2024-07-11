@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   username,
+  config,
   ...
 }:
 {
@@ -36,7 +37,7 @@
     powerKey = "hibernate";
   };
   #: }}}
-
+  services.openssh.enable = true;
   xdg.portal = {
     enable = true;
     config.common.default = "*";
@@ -66,6 +67,7 @@
     defaultUserShell = pkgs.fish;
     users.${username} = {
       isNormalUser = true;
+      passwordFile = config.age.secrets.user-password.path;
       createHome = true;
       extraGroups = [
         "networkmanager"
