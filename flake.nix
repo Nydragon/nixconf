@@ -23,6 +23,8 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ ./hosts ];
+
       systems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -60,28 +62,6 @@
             };
           }
         );
-
-        # TODO: move that somewhere else
-        nixosConfigurations = {
-          marr = lib.my.mkSystem {
-            hostname = "marr";
-            system = "x86_64-linux";
-            extraModules = [
-              #inputs.nixos-hardware.nixosModules.dell-xps-15-9510-nvidia
-            ];
-          };
-
-          brontes = lib.my.mkSystem {
-            hostname = "brontes";
-            system = "x86_64-linux";
-          };
-
-          styrak = lib.my.mkSystem {
-            hostname = "styrak";
-            system = "x86_64-linux";
-            extraModules = [ inputs.disko.nixosModules.disko ];
-          };
-        };
       };
     };
 }

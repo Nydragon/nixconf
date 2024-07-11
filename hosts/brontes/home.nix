@@ -15,9 +15,7 @@
       ../../home/rofi
       ../../home/swaync
       ../../home/waybar
-      ../../home/hyprland
       ../../home/hyprlock
-      ../../home/hypridle
       ../../home/hyprpaper
       ../../home/themes/catppuccin.nix
       ../../home

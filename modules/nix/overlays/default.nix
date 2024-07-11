@@ -1,5 +1,4 @@
 {
-
   nixpkgs.overlays = [
     # Add env vars to calibre so they may get propagated to a plugin that needs them
     (final: prev: {

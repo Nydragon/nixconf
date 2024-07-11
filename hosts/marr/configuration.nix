@@ -46,12 +46,15 @@
   };
 
   #: Virtualisation {{{
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableOnBoot = false;
-  virtualisation.docker.rootless = {
+  virtualisation.docker = {
     enable = true;
-    setSocketVariable = true;
+    enableOnBoot = false;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
   };
+
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   #: }}}
