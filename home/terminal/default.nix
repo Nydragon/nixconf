@@ -4,5 +4,6 @@
     ./ssh
     ./git
     ./fish
+    ./btop.nix
   ];
 }

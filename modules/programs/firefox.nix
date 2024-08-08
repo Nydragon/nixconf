@@ -1,9 +1,15 @@
 # References:
 # https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
 # https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix
-{ lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 lib.mkIf config.programs.firefox.enable {
   programs.firefox = {
+    package = pkgs.firefox-bin;
     preferencesStatus = "locked";
     preferences = {
       "browser.bookmarks.restore_default_bookmarks" = false;

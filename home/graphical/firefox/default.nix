@@ -7,6 +7,8 @@
 lib.mkIf osConfig.programs.firefox.enable {
   programs.firefox = {
     enable = true;
+    # Installed by nixpkgs module
+    package = null;
     profiles.nico = {
       name = "Nico";
       isDefault = true;

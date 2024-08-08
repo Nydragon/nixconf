@@ -18,6 +18,7 @@
         fi
       '';
     };
+
   set-background = pkgs.writers.writeFishBin "set-background" (
     builtins.readFile (
       pkgs.fetchurl {
@@ -28,4 +29,6 @@
   );
 
   nixedit = pkgs.writers.writeFishBin "nixedit" "env --chdir ~/.nixconf $EDITOR .";
+
+  getext = pkgs.writeScriptBin "ls | grep -E \"\.[a-zA-Z0-9]+$\" --only-matching  | sort | uniq";
 }
