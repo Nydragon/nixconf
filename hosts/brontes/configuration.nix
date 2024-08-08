@@ -39,7 +39,7 @@
   };
 
   services.dbus.enable = true;
-
+  services.desktopManager.cosmic.enable = true;
   programs = {
     dconf.enable = true;
     steam.enable = true;
